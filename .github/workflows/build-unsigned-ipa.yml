@@ -13,14 +13,13 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  HOST: macos-15
-  XCODE_VERSION: 16.3
-
 jobs:
   build-unsigned-ipa:
     name: Build Unsigned WebDriverAgent IPA
-    runs-on: ${{ env.HOST }}
+    runs-on: macos-15
+
+    env:
+      XCODE_VERSION: "16.3"
 
     steps:
       - name: Checkout code
